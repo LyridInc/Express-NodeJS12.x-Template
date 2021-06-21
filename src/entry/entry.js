@@ -1,17 +1,18 @@
 'use strict';
 
+const express = require('express'); 
+const path = require('path');
 // eslint-disable-next-line import/no-unresolved
-const express = require('express');
-
 const app = express();
 
 // Middlewares
 var morgan = require('morgan')
 app.use(morgan('combined'))
 
-// Routes
-app.all('/*', (req, res) => {
-  res.send(`Request received: ${req.method} - ${req.path}`);
+// Default Routes - Static file + index.html handler
+app.use(express.static(path.join(path.resolve(), 'dist')));
+app.get('/', function(req, res) {
+  res.sendFile(path.join(process.cwd(), 'dist/index.html'));
 });
 
 // Error handler

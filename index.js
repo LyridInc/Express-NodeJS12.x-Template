@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 require('dotenv').config()
-const entry = require('./src/YOUR_FUNCTION_NAME')
+const entry = require('./src/entry')
 const port = 3000
 
 entry.listen(port, () => {
