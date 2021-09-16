@@ -1,4 +1,4 @@
-name: node_sample
+name: node12_sample
 description: App Description
 ignoreFiles: .git node_modules
 modules:
